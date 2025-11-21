@@ -3409,6 +3409,12 @@ components:
           '@type': '@type'
           type: type
         '@type': '@type'
+        dataplaneMetadata:
+          '@type': '@type'
+          properties: "{}"
+          labels:
+          - labels
+          - labels
         '@id': '@id'
         privateProperties: "{}"
         '@context': {}
@@ -3439,6 +3445,8 @@ components:
           type: object
         dataAddress:
           $ref: "#/components/schemas/data-address-schema"
+        dataplaneMetadata:
+          $ref: "#/components/schemas/dataplane-metadata-schema"
     data-address-schema:
       title: DataAddressSchema
       type: object
@@ -3447,6 +3455,28 @@ components:
         type: type
       allOf:
       - $ref: "#/components/schemas/DataAddress"
+    dataplane-metadata-schema:
+      title: DataplaneMetadataSchema
+      type: object
+      example:
+        '@type': '@type'
+        properties: "{}"
+        labels:
+        - labels
+        - labels
+      allOf:
+      - $ref: "#/components/schemas/DataplaneMetadata"
+    DataplaneMetadata:
+      type: object
+      properties:
+        '@type':
+          type: string
+        labels:
+          type: array
+          items:
+            type: string
+        properties:
+          type: object
     ProvisionerWebhookRequest:
       type: object
       properties:
@@ -4464,6 +4494,8 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/callback-address-schema"
+        dataplaneMetadata:
+          $ref: "#/components/schemas/dataplane-metadata-schema"
     callback-address-schema:
       title: CallbackAddressSchema
       type: object
@@ -4569,6 +4601,12 @@ components:
         type: CONSUMER
         '@context': {}
         assetId: assetId
+        dataplaneMetadata:
+          '@type': '@type'
+          properties: "{}"
+          labels:
+          - labels
+          - labels
         callbackAddresses:
         - authKey: authKey
           '@type': '@type'
@@ -4642,6 +4680,8 @@ components:
           type: string
         dataDestination:
           $ref: "#/components/schemas/data-address-schema"
+        dataplaneMetadata:
+          $ref: "#/components/schemas/dataplane-metadata-schema"
     secret-schema:
       title: SecretSchema
       type: object
