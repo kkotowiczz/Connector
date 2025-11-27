@@ -464,6 +464,7 @@
           "@id": "edc:properties",
           "@type": "@json"
         },
+        "identity": "edc:identity",
         "state": {
           "@id": "edc:state",
           "@type": "@vocab"
@@ -478,6 +479,10 @@
       "@context": {
         "entries": {
           "@id": "edc:entries",
+          "@type": "@json"
+        },
+        "privateEntries": {
+          "@id": "edc:privateEntries",
           "@type": "@json"
         }
       }
